@@ -1,4 +1,4 @@
-# Conversor-de-moedas
+# Cotação
 Conversor de moedas (Dólar, Euro e Bitcoin) + gŕafico de comparação.
 
 Autor: Wesley Freitas
