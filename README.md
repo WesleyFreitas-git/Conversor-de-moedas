@@ -1,5 +1,5 @@
 # Cotação
-Conversor de moedas (Dólar, Euro e Bitcoin) + gŕafico de comparação.
+Conversor de moedas (Dólar, Euro e Bitcoin) + gráfico de comparação.
 
 Autor: Wesley Freitas
 Projeto: Cotação
