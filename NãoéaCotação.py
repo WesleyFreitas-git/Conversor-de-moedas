@@ -67,9 +67,10 @@ def cotacao():
 
 def interface():
     while True:
-        print("Opções:")
-        print("1. Ver cotação")
-        print("2. Ver gráfico de comparação")
+        print("""Opções:\n
+1. Ver cotação
+2. Ver gráfico de comparação\n""")
+        
         ask = input("O que você deseja fazer? ")
 
         if ask.lower() in ['1', "cotação", "cotacao"]:
