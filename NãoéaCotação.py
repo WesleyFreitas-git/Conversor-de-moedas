@@ -75,6 +75,9 @@ def interface():
         if ask.lower() in ['1', "cotação", "cotacao"]:
             cotacao()
         elif ask.lower() in ['2', "gráfico", "grafico"]:
-            grafico()
+            try:
+                grafico()
+            except:
+                print("\nValores insuficientes!!\n")
 
 interface()
