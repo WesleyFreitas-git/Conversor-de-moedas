@@ -2,9 +2,6 @@
 import requests
 import matplotlib.pyplot as plt
 
-dolar_grafico = []
-euro_grafico = []
-bitcoin_grafico = []
 
 def dolar():
     request = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL")
@@ -12,11 +9,7 @@ def dolar():
 
     global moeda1
     moeda1 = float(a["USDBRL"]["bid"])
-    
-    if moeda1 not in dolar_grafico:
-        
-        dolar_grafico.append(moeda1)
-
+   
     print(f"\nO dólar está valendo, em real, aproximadamente: \nR$ {moeda1}")
 
 
@@ -26,10 +19,7 @@ def euro():
 
     global moeda2
     moeda2 = float(a["EURBRL"]["bid"])
-    if moeda2 not in euro_grafico:
-        
-        euro_grafico.append(moeda2)
-
+   
     print(f"\nO euro está valendo, em real, aproximadamente:\nR$ {moeda2}")
     
 
@@ -39,10 +29,7 @@ def bitcoin():
 
     global moeda3
     moeda3 = float(a["BTCBRL"]["bid"])
-    if moeda3 not in bitcoin_grafico:
-        
-        bitcoin_grafico.append(moeda3)
-
+   
     print(f"\nO bitcoin está valendo, em real, aproximadamente: \nR$ {moeda3}")
 
 
