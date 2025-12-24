@@ -1,13 +1,13 @@
 # Cotação
-Conversor de moedas (Dólar, Euro e Bitcoin) + gráfico de comparação.
+**Conversor de moedas (Dólar, Euro e Bitcoin) + gráfico de comparação.**
 
-Autor: Wesley Freitas
+**Autor:** Wesley Freitas
 
-Projeto: Cotação
+**Projeto:** Cotação
 
 ## Dependências do sistema
 
-Linux (Pop!_OS)
+**Linux (Pop!_OS)**
 
 ```bash
 pip install -r requirements.txt
