@@ -1,6 +1,8 @@
-a = "Cotação"
-print(f"\033[92m{list(a)}\033[0m", end=' ')
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+nums2 = [numero % 10 if numero > 9 else numero for numero in nums ]
+nums3 = [numero % 10 for numero in nums]
 
-b = range(1,11)
+print(nums)
+print(nums2)
+print(nums3)
 
-print(len(b), end='01\n')

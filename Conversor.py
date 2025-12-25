@@ -85,4 +85,4 @@ def interface():
         else:
             print("\nDigite uma das opções\n")
             
-interface()
+
