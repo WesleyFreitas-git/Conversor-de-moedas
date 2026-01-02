@@ -1,7 +1,4 @@
-# Refazer o cotação, do 0 e com defs
-import requests
-import matplotlib.pyplot as plt
-
+import requests, graficos
 
 def dolar():
     request = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL")
@@ -33,25 +30,16 @@ def bitcoin():
     print(f"\nO bitcoin está valendo, em real, aproximadamente: \n\033[92mR$ {moeda3:.2f}\033[0m")
 
 
-def grafico():
-    x = ["Dólar", "Euro"]
-    y = [moeda1,moeda2]
-
-    plt.bar(x,y, color = 'blue')
-    plt.title("Comparação")
-    plt.xlabel("Moedas", color = 'blue')
-    plt.ylabel("Valores", color = 'blue')
-    plt.show()
-
-
 def cotacao():
     while True:
-
-        print("\n1. Dólar")
+        
+        print('-' * 50)
+        print("1. Dólar")
         print("2. Euro")
         print("3. Bitcoin")
         print("4. Sair")
-        ask = input("\nEscolha uma das opções: " )
+   
+        ask = input("\033[1;94mEscolha uma das opções: \033[0m" )
 
         if ask.lower() in ['1', "dolar", "dólar"]:
             dolar()
@@ -62,16 +50,16 @@ def cotacao():
         elif ask.lower() in ["4", "sair"]:
             break
         else:
-            print("Digite uma das opções.")
+            print("\033[1;91mDigite uma das opções.\033[0m")
 
 
 def interface():
     while True:
-        print("""Opções:\n
-1. Ver cotação
-2. Ver gráfico de comparação\n""")
+        print("""\n\033[1;94mOpções: 
+1.\033[0m Ver cotação\033[1;94m
+2.\033[0m Ver gráfico de comparação\033[0m""") 
         
-        ask = input("O que você deseja fazer? ")
+        ask = input("\033[1;94mO que você deseja fazer? \033[0m")
 
         if ask.lower() in ['1', "cotação", "cotacao"]:
             cotacao()
@@ -79,10 +67,11 @@ def interface():
         elif ask.lower() in ['2', "gráfico", "grafico"]:
             
             try:
-                grafico()
+                graficos.grafico_comparacao(moeda1, moeda2)
             except:
-                print("\n\033[91mValores insuficientes!!\033[0m\n")
+                print("\n\033[1;91mValores insuficientes!!\033[0m")
         else:
-            print("\nDigite uma das opções\n")
+            print("\n\033[1;91mDigite uma das opções!!\n\033[0m")
             
 
+interface()
