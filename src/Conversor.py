@@ -1,38 +1,39 @@
-import requests, graficos
+import requests
+import graficos
+
+API_awesomeapi = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL"
 
 def dolar():
-    request = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL")
+    request = requests.get(API_awesomeapi)
     a = request.json()
 
     global moeda1
     moeda1 = float(a["USDBRL"]["bid"])
-   
-    print(f"\nO dólar está valendo, em real, aproximadamente: \n\033[92mR$ {moeda1:.2f}\033[0m")
+    print(f"\nO dólar está valendo, em real, aproximadamente: \n\033[1;92mR$ {moeda1:.2f}\033[0m")
 
 
 def euro():
-    request = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL")
+    request = requests.get(API_awesomeapi)
     b = request.json()
 
     global moeda2
     moeda2 = float(b["EURBRL"]["bid"])
    
-    print(f"\nO euro está valendo, em real, aproximadamente:\n\033[92mR$ {moeda2:.2f}\033[0m")
+    print(f"\nO euro está valendo, em real, aproximadamente:\n\033[1;92mR$ {moeda2:.2f}\033[0m")
     
 
 def bitcoin():
-    request = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL")
+    request = requests.get(API_awesomeapi)
     c = request.json()
 
     global moeda3
     moeda3 = float(c["BTCBRL"]["bid"])
    
-    print(f"\nO bitcoin está valendo, em real, aproximadamente: \n\033[92mR$ {moeda3:.2f}\033[0m")
+    print(f"\nO bitcoin está valendo, em real, aproximadamente: \n\033[1;92mR$ {moeda3:,.2f}\033[0m")
 
 
 def cotacao():
     while True:
-        
         print('-' * 50)
         print("1. Dólar")
         print("2. Euro")
@@ -73,5 +74,5 @@ def interface():
         else:
             print("\n\033[1;91mDigite uma das opções!!\n\033[0m")
             
-
+            
 interface()
